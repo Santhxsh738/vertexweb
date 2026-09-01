@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | VERTEXWEB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #050811;
+            --bg-secondary: #0b0f19;
+            --card-bg: #111827;
+            --accent-blue: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.4);
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --card-bg: #f1f5f9;
+            --accent-blue: #2563eb;
+            --accent-glow: rgba(37, 99, 235, 0.2);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 6%;
+            background: var(--bg-secondary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-container img {
+            height: 38px;
+            width: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-blue);
+        }
+
+        .logo-text { font-size: 18px; font-weight: 700; color: var(--text-main); }
+        .logo-text span { color: var(--accent-blue); }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover, nav ul li a.active { color: var(--accent-blue); }
+
+        .theme-toggle {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        section { padding: 80px 8%; text-align: center; }
+        .section-title { font-size: 34px; font-weight: 700; margin-bottom: 10px; }
+        .section-desc { color: var(--text-muted); font-size: 15px; margin-bottom: 40px; }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 950px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 12px; margin-bottom: 6px; color: var(--text-muted); }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 10px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-main); font-size: 13px;
+            outline: none;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent-blue); }
+
+        .btn {
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+        .btn:hover { opacity: 0.9; }
+
+        .contact-info-side { display: flex; flex-direction: column; gap: 15px; justify-content: center; }
+        .contact-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .contact-card span { color: var(--accent-blue); font-size: 12px; }
+
+        footer { text-align: center; padding: 25px; background: var(--bg-secondary); color: var(--text-muted); font-size: 13px; border-top: 1px solid var(--border-color); }
+
+        @media (max-width: 768px) { .contact-wrapper { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="vertexlogo.png" alt="VERTEXWEB Logo">
+            <div class="logo-text">VERTEX<span>WEB</span></div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="student-offer.html">Student Offer</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌓</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-desc">Fill out the form or reach out directly via WhatsApp or email.</p>
+        
+        <div class="contact-wrapper">
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="clientName" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="clientEmail" placeholder="Your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Project Type</label>
+                    <select id="projectType">
+                        <option>Student Offer (60% OFF)</option>
+                        <option>Basic Website</option>
+                        <option>Business Website</option>
+                        <option>Web Application</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="clientMessage" rows="4" placeholder="Tell us about your requirements..." required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+
+            <div class="contact-info-side">
+                <a href="mailto:santhoshd0097@gmail.com" class="contact-card">
+                    <div style="font-size:24px;">📧</div>
+                    <div><h4>Email Us</h4><span>santhoshd0097@gmail.com</span></div>
+                </a>
+                <a href="tel:9944967885" class="contact-card">
+                    <div style="font-size:24px;">📞</div>
+                    <div><h4>Call / WhatsApp</h4><span>+91 99449 67885</span></div>
+                </a>
+                <a href="https://instagram.com/vertexweb__" target="_blank" class="contact-card">
+                    <div style="font-size:24px;">📸</div>
+                    <div><h4>Instagram DM</h4><span>@vertexweb__</span></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 VERTEXWEB. Design • Develop • Deliver. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Form Submission Handler to save data into localStorage for Admin Dashboard
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const clientName = document.getElementById('clientName').value.trim();
+                const clientEmail = document.getElementById('clientEmail').value.trim();
+                const projectType = document.getElementById('projectType').value;
+                const clientMessage = document.getElementById('clientMessage').value.trim();
+
+                // Fetch existing enquiries from localStorage or initialize empty array
+                let enquiries = JSON.parse(localStorage.getItem('vertex_enquiries')) || [];
+                
+                // Add new submission
+                enquiries.push({
+                    name: clientName,
+                    email: clientEmail,
+                    type: projectType,
+                    message: clientMessage,
+                    status: 'Pending'
+                });
+
+                // Store back into localStorage
+                localStorage.setItem('vertex_enquiries', JSON.stringify(enquiries));
+
+                alert('Thank you! Your message has been sent successfully.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>

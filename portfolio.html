@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Gallery | VERTEXWEB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #050811;
+            --bg-secondary: #0b0f19;
+            --card-bg: #111827;
+            --accent-blue: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.4);
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --card-bg: #f1f5f9;
+            --accent-blue: #2563eb;
+            --accent-glow: rgba(37, 99, 235, 0.2);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 6%;
+            background: var(--bg-secondary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-container img {
+            height: 38px;
+            width: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-blue);
+        }
+
+        .logo-text { font-size: 18px; font-weight: 700; color: var(--text-main); }
+        .logo-text span { color: var(--accent-blue); }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover, nav ul li a.active { color: var(--accent-blue); }
+
+        .theme-toggle {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        section { padding: 90px 8%; text-align: center; }
+        .section-title { font-size: 34px; font-weight: 700; margin-bottom: 10px; }
+        .section-desc { color: var(--text-muted); font-size: 15px; margin-bottom: 50px; }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            text-align: left;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-screenshot {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-info { padding: 25px; }
+        .project-info h3 { font-size: 20px; margin-bottom: 8px; }
+        .project-info p { font-size: 14px; color: var(--text-muted); margin-bottom: 15px; }
+
+        .project-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .project-links a {
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn-live { background: var(--accent-blue); color: white; }
+        .btn-code { background: var(--border-color); color: var(--text-main); }
+
+        footer { text-align: center; padding: 25px; background: var(--bg-secondary); color: var(--text-muted); font-size: 13px; border-top: 1px solid var(--border-color); }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="vertexlogo.png" alt="VERTEXWEB Logo">
+            <div class="logo-text">VERTEX<span>WEB</span></div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="student-offer.html">Student Offer</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌓</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2 class="section-title">Portfolio Gallery</h2>
+        <p class="section-desc">Explore completed web applications, screenshots, live demos, and source code links.</p>
+        
+        <div class="portfolio-grid">
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Tamilam Events" class="project-screenshot">
+                <div class="project-info">
+                    <h3>Tamilam Events</h3>
+                    <p>A dynamic web registration platform built with seamless event booking workflows and secure database connectivity.</p>
+                    <div style="font-size:12px; color:var(--accent-blue); font-weight:600; margin-bottom:10px;">PHP • MySQL • HTML5</div>
+                    <div class="project-links">
+                        <a href="#" class="btn-live">Live Demo</a>
+                        <a href="https://github.com/santhoshd0097" target="_blank" class="btn-code">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="College Lab Systems" class="project-screenshot">
+                <div class="project-info">
+                    <h3>College Lab & Record Systems</h3>
+                    <p>Academic backend management tools optimized for tracking records, user validation, and automated data processing.</p>
+                    <div style="font-size:12px; color:var(--accent-blue); font-weight:600; margin-bottom:10px;">Python • MySQL • Backend</div>
+                    <div class="project-links">
+                        <a href="#" class="btn-live">Live Demo</a>
+                        <a href="https://github.com/santhoshd0097" target="_blank" class="btn-code">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Business Portal" class="project-screenshot">
+                <div class="project-info">
+                    <h3>Business Web Portals</h3>
+                    <p>Professional corporate websites tailored for local brands, agencies, and enterprises to scale their online presence.</p>
+                    <div style="font-size:12px; color:var(--accent-blue); font-weight:600; margin-bottom:10px;">UI/UX • Responsive • SEO</div>
+                    <div class="project-links">
+                        <a href="#" class="btn-live">Live Demo</a>
+                        <a href="https://github.com/santhoshd0097" target="_blank" class="btn-code">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 VERTEXWEB. Design • Develop • Deliver. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        themeToggle.addEventListener('click', () => {
+            htmlElement.setAttribute('data-theme', htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>
