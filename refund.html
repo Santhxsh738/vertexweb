@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Refund Policy | VERTEXWEB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #030712;
+            --bg-secondary: #0b0f19;
+            --card-bg: #111827;
+            --accent-blue: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.25);
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --card-bg: #ffffff;
+            --accent-blue: #2563eb;
+            --accent-glow: rgba(37, 99, 235, 0.15);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            padding-bottom: 50px;
+        }
+
+        /* Responsive Header & Navigation */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 4%; background: rgba(11, 15, 25, 0.95);
+            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(16px);
+            flex-wrap: wrap; gap: 8px;
+        }
+
+        [data-theme="light"] header { background: rgba(255, 255, 255, 0.95); }
+
+        .logo-container {
+            display: flex; align-items: center; gap: 8px; text-decoration: none;
+        }
+        .agency-logo-img {
+            height: 35px; width: 35px; border-radius: 50%;
+            object-fit: cover; border: 2px solid var(--accent-blue);
+        }
+        .logo-brand-text {
+            font-size: 16px; font-weight: 800; color: var(--text-main);
+        }
+        .logo-brand-text span { color: var(--accent-blue); }
+
+        /* Hamburger Menu Button Style */
+        .menu-toggle-btn {
+            display: block;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* Mobile Collapsible Nav */
+        nav {
+            display: none;
+            width: 100%;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 15px 0;
+            margin-top: 8px;
+        }
+        nav.active-nav {
+            display: block;
+        }
+        nav ul { list-style: none; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+        nav ul li a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 6px; display: inline-block; }
+        nav ul li a:hover, nav ul li a.active { color: white; background: var(--accent-blue); }
+
+        .nav-controls { display: flex; gap: 6px; align-items: center; margin-left: auto; }
+        .control-btn, .theme-toggle, .lang-select {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            color: var(--text-main); padding: 5px 10px; border-radius: 6px;
+            cursor: pointer; font-size: 11px; font-weight: 600; outline: none;
+        }
+
+        .legal-container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            text-align: left;
+        }
+
+        .legal-container h1 { font-size: 24px; font-weight: 800; margin-bottom: 6px; color: var(--text-main); }
+        .legal-date { font-size: 12px; color: var(--accent-blue); margin-bottom: 25px; font-weight: 600; }
+        
+        .legal-container h3 { font-size: 16px; font-weight: 700; margin-top: 20px; margin-bottom: 8px; color: var(--text-main); }
+        .legal-container p { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.6; }
+
+        footer { text-align: center; padding: 25px 5%; background: var(--bg-secondary); color: var(--text-muted); font-size: 11px; border-top: 1px solid var(--border-color); }
+        footer a { color: var(--text-muted); text-decoration: none; }
+
+        /* 💻 Desktop View Overrides */
+        @media (min-width: 768px) {
+            header { padding: 18px 6%; flex-wrap: nowrap; gap: 0; }
+            .menu-toggle-btn { display: none; }
+            nav { display: block !important; width: auto; background: transparent; border: none; padding: 0; margin: 0; }
+            nav ul { flex-direction: row; gap: 15px; }
+            nav ul li a { font-size: 13px; padding: 0; background: transparent !important; color: var(--text-muted); }
+            nav ul li a:hover, nav ul li a.active { color: var(--accent-blue); background: transparent !important; }
+            .nav-controls { margin-left: 0; }
+            .control-btn, .theme-toggle, .lang-select { font-size: 12px; padding: 6px 12px; }
+            
+            .legal-container { max-width: 900px; margin: 50px auto; padding: 40px; }
+            .legal-container h1 { font-size: 32px; }
+            .legal-date { font-size: 13px; }
+            .legal-container h3 { font-size: 18px; }
+            .legal-container p { font-size: 14px; }
+            footer { font-size: 13px; padding: 35px 6%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="vertexlogo.png" alt="VERTEXWEB Logo" class="agency-logo-img">
+            <div class="logo-brand-text">VERTEX<span>WEB</span></div>
+        </a>
+
+        <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Toggle Menu">
+            ☰
+        </button>
+
+        <div class="nav-controls">
+            <button class="control-btn" id="searchBtn" title="Search">🔍</button>
+            <button class="control-btn" id="installPwaBtn" title="Install App">📱 PWA</button>
+            <select class="lang-select" id="langSelect">
+                <option value="en">English</option>
+                <option value="ta">தமிழ்</option>
+                <option value="hi">हिन्दी</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+            </select>
+            <button class="theme-toggle" id="themeToggle">🌓</button>
+        </div>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html" data-key="nav_home">Home</a></li>
+                <li><a href="about.html" data-key="nav_about">About</a></li>
+                <li><a href="services.html" data-key="nav_services">Services</a></li>
+                <li><a href="portfolio.html" data-key="nav_portfolio">Portfolio</a></li>
+                <li><a href="student-offer.html" data-key="nav_student">Student Offer</a></li>
+                <li><a href="pricing.html" data-key="nav_pricing">Pricing</a></li>
+                <li><a href="blog.html" data-key="nav_blog">Blog</a></li>
+                <li><a href="admin.html" data-key="nav_admin">Admin</a></li>
+                <li><a href="contact.html" data-key="nav_contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Refund Policy Content -->
+    <div class="legal-container">
+        <h1>Refund & Cancellation Policy</h1>
+        <div class="legal-date">Last Updated: August 2026</div>
+        <p>At <strong>VERTEXWEB</strong>, we strive to deliver top-tier web development and academic project services. Please read our policy regarding refunds and project cancellations carefully.</p>
+        
+        <h3>1. Project Initiation & Deposits</h3>
+        <p>Any advance payment or deposit made for initiating a project, landing page, or student support package is strictly non-refundable once development or resource allocation has begun.</p>
+        
+        <h3>2. Milestone Refunds</h3>
+        <p>If a project is cancelled by the client midway, refunds are calculated based on the proportion of work completed up to that date. Fully completed and delivered source code packages are ineligible for refunds.</p>
+        
+        <h3>3. Contact Support</h3>
+        <p>For any billing inquiries or clarification, contact us directly at <strong>santhoshd0097@gmail.com</strong>.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 VERTEXWEB. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Hamburger Menu Toggle for Refund Policy Page
+        const menuToggleBtn = document.getElementById('menuToggleBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        if (menuToggleBtn && navMenu) {
+            menuToggleBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active-nav');
+            });
+        }
+    </script>
+</body>
+</html>
